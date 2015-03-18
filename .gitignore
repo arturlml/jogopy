@@ -1,54 +1,64 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
+import random
+you= 0
+sorteio_pontuacao= 0
+while (you!=3) or (sorteio_pontuacao!=3):
+    you_escolha= input('escolha uma opcao: papel;pedra;tesoura;spock;lagarto ')
+    x = 'papel' 
+    y = 'pedra'
+    z = 'tesoura'
+    w = 'spock'
+    v = 'lagarto' 
+    lista = [v,w,x,y,z]
+    sorteio = random.choice(lista)
+    print ('o elemento sorteado foi: ',sorteio)
+    if (you_escolha=='spock') and (sorteio=='tesoura'):
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha=='pedra' and sorteio=='tesoura':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha=='tesoura' and sorteio=='lagarto':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha=='pedra'and sorteio=='lagarto':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha== 'papel' and sorteio=='pedra':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha=='spock' and sorteio=='pedra':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha=='lagarto' and sorteio=='spock':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha=='papel' and sorteio=='spock':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha=='tesoura' and sorteio=='papel':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha=='lagarto' and sorteio=='papel':
+        print ('vc ganhou')
+        you=you+1
+        sorteio_pontuacao=0
+    elif you_escolha==sorteio:
+        print ('empate')
+        you=you+0
+        sorteio_pontuacao=sorteio_pontuacao+0
+    else :
+        print ('vc perdeu')
+        you=0
+        sorteio_pontuacao=sorteio_pontuacao+1
+    print("you",you)
+    print("computador",sorteio_pontuacao)
+print('fim')
